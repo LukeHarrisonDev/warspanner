@@ -1,6 +1,7 @@
 const { Weapon, RangedWeapon, MeleeWeapon } = require("../weapons.js")
 const { Fleshborer, ChitinousClawsAndTeeth } = require("../tyranidWeapons.js")
 const { Model } = require("../model.js")
+const { Termagant } = require("../tyranids.js")
 
 describe("Weapons", () => {
     describe("Weapon", () => {
@@ -71,10 +72,10 @@ describe("Weapons", () => {
 })
 
 describe("Model", () => {
-    test("Has set values and properties by default", () => {
+    test("Has set properties by default", () => {
         const testModel = new Model()
         expect(testModel).toMatchObject({
-           move: 6,
+           move: 12,
            toughness: 3,
            save: 5,
            wounds: 1,
@@ -84,3 +85,19 @@ describe("Model", () => {
     })
 })
 
+describe("Tyranid Models", () => {
+    describe("Termegant", () => {
+        test("Has a name property of 'Termagant' and properties inherited from 'Model'", () => {
+            const testTermagant = new Termagant()
+            expect(testTermagant).toMatchObject({
+                name: "Termagant",
+                move: 6,
+                toughness: 3,
+                save: 5,
+                wounds: 1,
+                leadership: 8,
+                objectiveControl: 2
+            })
+        })
+    })
+})

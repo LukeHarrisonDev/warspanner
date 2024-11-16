@@ -1,6 +1,6 @@
 class Model {
     constructor() {
-        this.move = 6
+        this.move = 12
         this.toughness = 3
         this.save = 5
         this.wounds = 1
@@ -8,8 +8,6 @@ class Model {
         this.objectiveControl = 2
     }
 }
-
-
 
 module.exports = {
     Model
