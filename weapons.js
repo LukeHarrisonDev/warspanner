@@ -10,6 +10,7 @@ class Weapon {
 class RangedWeapon extends Weapon{
     constructor() {
         super()
+        this.type = "ranged"
         this.range = 12
         this.balisticSkill = 4
     }
@@ -18,6 +19,7 @@ class RangedWeapon extends Weapon{
 class MeleeWeapon extends Weapon{
     constructor(name) {
         super(name)
+        this.type = "melee"
         this.weaponSkill = 4
     }
 }

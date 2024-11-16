@@ -99,5 +99,43 @@ describe("Tyranid Models", () => {
                 objectiveControl: 2
             })
         })
+        test("Has a 'Fleshborer' ranged weapon that keeps its properties", () => {
+            const testFleshborer = new Fleshborer()
+            const testTermagant = new Termagant(testFleshborer)
+            expect(testTermagant.rangedWeapon).toMatchObject({
+                name: "Fleshborer",
+                attacks: 1,
+                range: 18,
+                balisticSkill: 4,
+                strength: 5,
+                ap: 0,
+                damage: 1
+            })
+        })
+        test("Has 'ChitinousClawsAndTeeth' melee weapon that keeps its properties", () => {
+            const testFleshborer = new Fleshborer()
+            const testChitinousClawsAndTeeth = new ChitinousClawsAndTeeth()
+            const testTermagant = new Termagant(testFleshborer, testChitinousClawsAndTeeth)
+            expect(testTermagant.meleeWeapon).toMatchObject({
+                name: "Chitinous claws and teeth",
+                attacks: 1,
+                weaponSkill: 4,
+                strength: 3,
+                ap: 0,
+                damage: 1
+            })
+        })
+        test("When creating a Termagant, only a ranged weapon can go in the ranged slot", () => {
+            const testFleshborer = new Fleshborer()
+            const testChitinousClawsAndTeeth = new ChitinousClawsAndTeeth()
+            const testTermagant = new Termagant(testChitinousClawsAndTeeth, testFleshborer)
+            expect(testTermagant.rangedWeapon.name).toBe("Fleshborer")
+        })
+        test("When creating a Termagant, only a melee weapon can go in the melee slot", () => {
+            const testFleshborer = new Fleshborer()
+            const testChitinousClawsAndTeeth = new ChitinousClawsAndTeeth()
+            const testTermagant = new Termagant(testChitinousClawsAndTeeth, testFleshborer)
+            expect(testTermagant.meleeWeapon.name).toBe("Chitinous claws and teeth")
+        })
     })
 })
