@@ -1,0 +1,15 @@
+{
+  "name": "warspanner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "model.js",
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "jest-extended": "^4.0.2"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
