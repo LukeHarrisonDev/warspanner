@@ -137,5 +137,8 @@ describe("Tyranid Models", () => {
             const testTermagant = new Termagant(testChitinousClawsAndTeeth, testFleshborer)
             expect(testTermagant.meleeWeapon.name).toBe("Chitinous claws and teeth")
         })
+        test("", () => {
+            
+        })
     })
 })
